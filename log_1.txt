@@ -1,0 +1,814 @@
+root@6b87feb04ee6:/mnt# python prune.py 
+Files already downloaded and verified
+Files already downloaded and verified
+Test Accuracy: 0.869
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.89      1000
+           1       0.94      0.93      0.94      1000
+           2       0.84      0.84      0.84      1000
+           3       0.73      0.75      0.74      1000
+           4       0.85      0.88      0.87      1000
+           5       0.81      0.76      0.78      1000
+           6       0.89      0.91      0.90      1000
+           7       0.91      0.90      0.90      1000
+           8       0.92      0.93      0.92      1000
+           9       0.92      0.91      0.91      1000
+
+    accuracy                           0.87     10000
+   macro avg       0.87      0.87      0.87     10000
+weighted avg       0.87      0.87      0.87     10000
+
+Global Sparsity:
+0.00
+Iterative Pruning + Fine-Tuning...
+Pruning and Finetuning 1/8
+Pruning...
+Test Accuracy: 0.868
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88      1000
+           1       0.95      0.93      0.94      1000
+           2       0.84      0.83      0.84      1000
+           3       0.72      0.77      0.74      1000
+           4       0.86      0.88      0.87      1000
+           5       0.83      0.75      0.79      1000
+           6       0.90      0.91      0.91      1000
+           7       0.89      0.90      0.90      1000
+           8       0.92      0.93      0.93      1000
+           9       0.91      0.91      0.91      1000
+
+    accuracy                           0.87     10000
+   macro avg       0.87      0.87      0.87     10000
+weighted avg       0.87      0.87      0.87     10000
+
+Global Sparsity:
+0.30
+Fine-tuning...
+Epoch: 000 Eval Loss: 0.642 Eval Acc: 0.868
+Epoch: 001 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.646 Eval Acc: 0.869
+Epoch: 002 Train Loss: 0.028 Train Acc: 0.991 Eval Loss: 0.650 Eval Acc: 0.867
+Epoch: 003 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.646 Eval Acc: 0.869
+Epoch: 004 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.654 Eval Acc: 0.868
+Epoch: 005 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.646 Eval Acc: 0.869
+Epoch: 006 Train Loss: 0.028 Train Acc: 0.990 Eval Loss: 0.649 Eval Acc: 0.868
+Epoch: 007 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.653 Eval Acc: 0.869
+Epoch: 008 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.651 Eval Acc: 0.868
+Epoch: 009 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.653 Eval Acc: 0.868
+Epoch: 010 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.650 Eval Acc: 0.869
+Epoch: 011 Train Loss: 0.028 Train Acc: 0.991 Eval Loss: 0.650 Eval Acc: 0.869
+Epoch: 012 Train Loss: 0.028 Train Acc: 0.991 Eval Loss: 0.656 Eval Acc: 0.868
+Epoch: 013 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.657 Eval Acc: 0.870
+Epoch: 014 Train Loss: 0.026 Train Acc: 0.992 Eval Loss: 0.654 Eval Acc: 0.869
+Epoch: 015 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.655 Eval Acc: 0.869
+Epoch: 016 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.663 Eval Acc: 0.869
+Epoch: 017 Train Loss: 0.025 Train Acc: 0.992 Eval Loss: 0.656 Eval Acc: 0.869
+Epoch: 018 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.658 Eval Acc: 0.869
+Epoch: 019 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.659 Eval Acc: 0.869
+Epoch: 020 Train Loss: 0.025 Train Acc: 0.992 Eval Loss: 0.658 Eval Acc: 0.869
+Epoch: 021 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.659 Eval Acc: 0.869
+Epoch: 022 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.660 Eval Acc: 0.869
+Epoch: 023 Train Loss: 0.025 Train Acc: 0.992 Eval Loss: 0.664 Eval Acc: 0.869
+Epoch: 024 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.667 Eval Acc: 0.870
+Epoch: 025 Train Loss: 0.025 Train Acc: 0.992 Eval Loss: 0.663 Eval Acc: 0.870
+Epoch: 026 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.658 Eval Acc: 0.871
+Epoch: 027 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.663 Eval Acc: 0.871
+Epoch: 028 Train Loss: 0.023 Train Acc: 0.992 Eval Loss: 0.661 Eval Acc: 0.869
+Epoch: 029 Train Loss: 0.023 Train Acc: 0.993 Eval Loss: 0.665 Eval Acc: 0.868
+Epoch: 030 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.670 Eval Acc: 0.869
+Epoch: 031 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.672 Eval Acc: 0.869
+Epoch: 032 Train Loss: 0.023 Train Acc: 0.993 Eval Loss: 0.675 Eval Acc: 0.869
+Epoch: 033 Train Loss: 0.023 Train Acc: 0.992 Eval Loss: 0.674 Eval Acc: 0.870
+Epoch: 034 Train Loss: 0.023 Train Acc: 0.993 Eval Loss: 0.672 Eval Acc: 0.869
+Epoch: 035 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.673 Eval Acc: 0.870
+Epoch: 036 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.674 Eval Acc: 0.870
+Epoch: 037 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.672 Eval Acc: 0.870
+Epoch: 038 Train Loss: 0.023 Train Acc: 0.992 Eval Loss: 0.676 Eval Acc: 0.870
+Epoch: 039 Train Loss: 0.025 Train Acc: 0.992 Eval Loss: 0.679 Eval Acc: 0.869
+Epoch: 040 Train Loss: 0.022 Train Acc: 0.992 Eval Loss: 0.681 Eval Acc: 0.869
+Epoch: 041 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.673 Eval Acc: 0.870
+Epoch: 042 Train Loss: 0.022 Train Acc: 0.993 Eval Loss: 0.682 Eval Acc: 0.870
+Epoch: 043 Train Loss: 0.022 Train Acc: 0.993 Eval Loss: 0.680 Eval Acc: 0.870
+Epoch: 044 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.681 Eval Acc: 0.869
+Epoch: 045 Train Loss: 0.024 Train Acc: 0.992 Eval Loss: 0.685 Eval Acc: 0.870
+Epoch: 046 Train Loss: 0.023 Train Acc: 0.993 Eval Loss: 0.682 Eval Acc: 0.868
+Epoch: 047 Train Loss: 0.022 Train Acc: 0.993 Eval Loss: 0.687 Eval Acc: 0.869
+Epoch: 048 Train Loss: 0.022 Train Acc: 0.993 Eval Loss: 0.685 Eval Acc: 0.869
+Epoch: 049 Train Loss: 0.021 Train Acc: 0.993 Eval Loss: 0.688 Eval Acc: 0.869
+Epoch: 050 Train Loss: 0.022 Train Acc: 0.992 Eval Loss: 0.691 Eval Acc: 0.868
+Test Accuracy: 0.868
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88      1000
+           1       0.94      0.92      0.93      1000
+           2       0.86      0.83      0.84      1000
+           3       0.72      0.77      0.74      1000
+           4       0.86      0.87      0.87      1000
+           5       0.80      0.77      0.79      1000
+           6       0.89      0.92      0.90      1000
+           7       0.92      0.88      0.90      1000
+           8       0.92      0.93      0.92      1000
+           9       0.91      0.91      0.91      1000
+
+    accuracy                           0.87     10000
+   macro avg       0.87      0.87      0.87     10000
+weighted avg       0.87      0.87      0.87     10000
+
+Global Sparsity:
+0.30
+Pruning and Finetuning 2/8
+Pruning...
+Test Accuracy: 0.854
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88      1000
+           1       0.95      0.89      0.92      1000
+           2       0.83      0.81      0.82      1000
+           3       0.71      0.74      0.72      1000
+           4       0.82      0.88      0.85      1000
+           5       0.77      0.77      0.77      1000
+           6       0.86      0.91      0.88      1000
+           7       0.96      0.82      0.88      1000
+           8       0.91      0.92      0.91      1000
+           9       0.91      0.90      0.90      1000
+
+    accuracy                           0.85     10000
+   macro avg       0.86      0.85      0.85     10000
+weighted avg       0.86      0.85      0.85     10000
+
+Global Sparsity:
+0.51
+Fine-tuning...
+Epoch: 000 Eval Loss: 0.789 Eval Acc: 0.854
+Epoch: 001 Train Loss: 0.043 Train Acc: 0.985 Eval Loss: 0.703 Eval Acc: 0.864
+Epoch: 002 Train Loss: 0.040 Train Acc: 0.986 Eval Loss: 0.701 Eval Acc: 0.866
+Epoch: 003 Train Loss: 0.040 Train Acc: 0.987 Eval Loss: 0.697 Eval Acc: 0.865
+Epoch: 004 Train Loss: 0.039 Train Acc: 0.986 Eval Loss: 0.692 Eval Acc: 0.866
+Epoch: 005 Train Loss: 0.036 Train Acc: 0.987 Eval Loss: 0.696 Eval Acc: 0.865
+Epoch: 006 Train Loss: 0.035 Train Acc: 0.988 Eval Loss: 0.688 Eval Acc: 0.864
+Epoch: 007 Train Loss: 0.035 Train Acc: 0.988 Eval Loss: 0.683 Eval Acc: 0.865
+Epoch: 008 Train Loss: 0.034 Train Acc: 0.989 Eval Loss: 0.684 Eval Acc: 0.865
+Epoch: 009 Train Loss: 0.034 Train Acc: 0.988 Eval Loss: 0.686 Eval Acc: 0.864
+Epoch: 010 Train Loss: 0.034 Train Acc: 0.988 Eval Loss: 0.688 Eval Acc: 0.866
+Epoch: 011 Train Loss: 0.033 Train Acc: 0.989 Eval Loss: 0.683 Eval Acc: 0.865
+Epoch: 012 Train Loss: 0.031 Train Acc: 0.989 Eval Loss: 0.686 Eval Acc: 0.865
+Epoch: 013 Train Loss: 0.033 Train Acc: 0.989 Eval Loss: 0.686 Eval Acc: 0.866
+Epoch: 014 Train Loss: 0.032 Train Acc: 0.989 Eval Loss: 0.687 Eval Acc: 0.866
+Epoch: 015 Train Loss: 0.031 Train Acc: 0.990 Eval Loss: 0.684 Eval Acc: 0.867
+Epoch: 016 Train Loss: 0.031 Train Acc: 0.989 Eval Loss: 0.684 Eval Acc: 0.867
+Epoch: 017 Train Loss: 0.030 Train Acc: 0.989 Eval Loss: 0.683 Eval Acc: 0.865
+Epoch: 018 Train Loss: 0.031 Train Acc: 0.989 Eval Loss: 0.687 Eval Acc: 0.866
+Epoch: 019 Train Loss: 0.031 Train Acc: 0.989 Eval Loss: 0.690 Eval Acc: 0.864
+Epoch: 020 Train Loss: 0.030 Train Acc: 0.989 Eval Loss: 0.690 Eval Acc: 0.866
+Epoch: 021 Train Loss: 0.030 Train Acc: 0.990 Eval Loss: 0.689 Eval Acc: 0.867
+Epoch: 022 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.688 Eval Acc: 0.867
+Epoch: 023 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.692 Eval Acc: 0.868
+Epoch: 024 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.689 Eval Acc: 0.866
+Epoch: 025 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.690 Eval Acc: 0.868
+Epoch: 026 Train Loss: 0.029 Train Acc: 0.989 Eval Loss: 0.690 Eval Acc: 0.866
+Epoch: 027 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.691 Eval Acc: 0.866
+Epoch: 028 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.692 Eval Acc: 0.867
+Epoch: 029 Train Loss: 0.030 Train Acc: 0.990 Eval Loss: 0.696 Eval Acc: 0.866
+Epoch: 030 Train Loss: 0.028 Train Acc: 0.990 Eval Loss: 0.693 Eval Acc: 0.866
+Epoch: 031 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.692 Eval Acc: 0.866
+Epoch: 032 Train Loss: 0.029 Train Acc: 0.991 Eval Loss: 0.693 Eval Acc: 0.866
+Epoch: 033 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.695 Eval Acc: 0.866
+Epoch: 034 Train Loss: 0.029 Train Acc: 0.990 Eval Loss: 0.691 Eval Acc: 0.866
+Epoch: 035 Train Loss: 0.028 Train Acc: 0.991 Eval Loss: 0.696 Eval Acc: 0.867
+Epoch: 036 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.697 Eval Acc: 0.866
+Epoch: 037 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.692 Eval Acc: 0.866
+Epoch: 038 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.692 Eval Acc: 0.867
+Epoch: 039 Train Loss: 0.027 Train Acc: 0.991 Eval Loss: 0.700 Eval Acc: 0.868
+Epoch: 040 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.701 Eval Acc: 0.867
+Epoch: 041 Train Loss: 0.027 Train Acc: 0.990 Eval Loss: 0.704 Eval Acc: 0.867
+Epoch: 042 Train Loss: 0.027 Train Acc: 0.990 Eval Loss: 0.691 Eval Acc: 0.867
+Epoch: 043 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.701 Eval Acc: 0.868
+Epoch: 044 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.703 Eval Acc: 0.866
+Epoch: 045 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.704 Eval Acc: 0.868
+Epoch: 046 Train Loss: 0.026 Train Acc: 0.991 Eval Loss: 0.705 Eval Acc: 0.867
+Epoch: 047 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.699 Eval Acc: 0.867
+Epoch: 048 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.701 Eval Acc: 0.865
+Epoch: 049 Train Loss: 0.025 Train Acc: 0.991 Eval Loss: 0.706 Eval Acc: 0.865
+Epoch: 050 Train Loss: 0.025 Train Acc: 0.992 Eval Loss: 0.699 Eval Acc: 0.866
+Test Accuracy: 0.866
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.88      0.88      1000
+           1       0.94      0.93      0.94      1000
+           2       0.84      0.83      0.84      1000
+           3       0.74      0.74      0.74      1000
+           4       0.86      0.88      0.87      1000
+           5       0.79      0.78      0.79      1000
+           6       0.89      0.91      0.90      1000
+           7       0.90      0.89      0.89      1000
+           8       0.91      0.93      0.92      1000
+           9       0.90      0.90      0.90      1000
+
+    accuracy                           0.87     10000
+   macro avg       0.87      0.87      0.87     10000
+weighted avg       0.87      0.87      0.87     10000
+
+Global Sparsity:
+0.51
+Pruning and Finetuning 3/8
+Pruning...
+Test Accuracy: 0.810
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.80      0.85      1000
+           1       0.97      0.78      0.86      1000
+           2       0.89      0.67      0.77      1000
+           3       0.68      0.64      0.66      1000
+           4       0.71      0.89      0.79      1000
+           5       0.62      0.83      0.71      1000
+           6       0.88      0.87      0.88      1000
+           7       0.95      0.77      0.85      1000
+           8       0.87      0.92      0.89      1000
+           9       0.80      0.92      0.85      1000
+
+    accuracy                           0.81     10000
+   macro avg       0.83      0.81      0.81     10000
+weighted avg       0.83      0.81      0.81     10000
+
+Global Sparsity:
+0.66
+Fine-tuning...
+Epoch: 000 Eval Loss: 1.060 Eval Acc: 0.810
+Epoch: 001 Train Loss: 0.091 Train Acc: 0.969 Eval Loss: 0.752 Eval Acc: 0.857
+Epoch: 002 Train Loss: 0.076 Train Acc: 0.973 Eval Loss: 0.725 Eval Acc: 0.860
+Epoch: 003 Train Loss: 0.067 Train Acc: 0.976 Eval Loss: 0.717 Eval Acc: 0.860
+Epoch: 004 Train Loss: 0.064 Train Acc: 0.977 Eval Loss: 0.706 Eval Acc: 0.860
+Epoch: 005 Train Loss: 0.060 Train Acc: 0.979 Eval Loss: 0.710 Eval Acc: 0.859
+Epoch: 006 Train Loss: 0.060 Train Acc: 0.979 Eval Loss: 0.702 Eval Acc: 0.861
+Epoch: 007 Train Loss: 0.058 Train Acc: 0.979 Eval Loss: 0.696 Eval Acc: 0.862
+Epoch: 008 Train Loss: 0.057 Train Acc: 0.980 Eval Loss: 0.692 Eval Acc: 0.862
+Epoch: 009 Train Loss: 0.056 Train Acc: 0.980 Eval Loss: 0.690 Eval Acc: 0.864
+Epoch: 010 Train Loss: 0.053 Train Acc: 0.981 Eval Loss: 0.693 Eval Acc: 0.863
+Epoch: 011 Train Loss: 0.051 Train Acc: 0.982 Eval Loss: 0.688 Eval Acc: 0.865
+Epoch: 012 Train Loss: 0.051 Train Acc: 0.982 Eval Loss: 0.685 Eval Acc: 0.864
+Epoch: 013 Train Loss: 0.052 Train Acc: 0.982 Eval Loss: 0.684 Eval Acc: 0.864
+Epoch: 014 Train Loss: 0.050 Train Acc: 0.982 Eval Loss: 0.689 Eval Acc: 0.864
+Epoch: 015 Train Loss: 0.049 Train Acc: 0.983 Eval Loss: 0.686 Eval Acc: 0.864
+Epoch: 016 Train Loss: 0.049 Train Acc: 0.982 Eval Loss: 0.694 Eval Acc: 0.864
+Epoch: 017 Train Loss: 0.049 Train Acc: 0.983 Eval Loss: 0.689 Eval Acc: 0.864
+Epoch: 018 Train Loss: 0.049 Train Acc: 0.982 Eval Loss: 0.684 Eval Acc: 0.862
+Epoch: 019 Train Loss: 0.047 Train Acc: 0.983 Eval Loss: 0.684 Eval Acc: 0.864
+Epoch: 020 Train Loss: 0.047 Train Acc: 0.983 Eval Loss: 0.683 Eval Acc: 0.864
+Epoch: 021 Train Loss: 0.046 Train Acc: 0.984 Eval Loss: 0.687 Eval Acc: 0.863
+Epoch: 022 Train Loss: 0.046 Train Acc: 0.985 Eval Loss: 0.686 Eval Acc: 0.863
+Epoch: 023 Train Loss: 0.045 Train Acc: 0.984 Eval Loss: 0.690 Eval Acc: 0.864
+Epoch: 024 Train Loss: 0.046 Train Acc: 0.984 Eval Loss: 0.688 Eval Acc: 0.864
+Epoch: 025 Train Loss: 0.045 Train Acc: 0.984 Eval Loss: 0.688 Eval Acc: 0.863
+Epoch: 026 Train Loss: 0.041 Train Acc: 0.986 Eval Loss: 0.690 Eval Acc: 0.864
+Epoch: 027 Train Loss: 0.044 Train Acc: 0.984 Eval Loss: 0.691 Eval Acc: 0.863
+Epoch: 028 Train Loss: 0.044 Train Acc: 0.984 Eval Loss: 0.691 Eval Acc: 0.864
+Epoch: 029 Train Loss: 0.041 Train Acc: 0.985 Eval Loss: 0.692 Eval Acc: 0.864
+Epoch: 030 Train Loss: 0.042 Train Acc: 0.985 Eval Loss: 0.689 Eval Acc: 0.863
+Epoch: 031 Train Loss: 0.042 Train Acc: 0.985 Eval Loss: 0.685 Eval Acc: 0.864
+Epoch: 032 Train Loss: 0.041 Train Acc: 0.986 Eval Loss: 0.690 Eval Acc: 0.864
+Epoch: 033 Train Loss: 0.043 Train Acc: 0.985 Eval Loss: 0.689 Eval Acc: 0.865
+Epoch: 034 Train Loss: 0.041 Train Acc: 0.986 Eval Loss: 0.689 Eval Acc: 0.865
+Epoch: 035 Train Loss: 0.041 Train Acc: 0.986 Eval Loss: 0.686 Eval Acc: 0.866
+Epoch: 036 Train Loss: 0.042 Train Acc: 0.985 Eval Loss: 0.690 Eval Acc: 0.866
+Epoch: 037 Train Loss: 0.038 Train Acc: 0.986 Eval Loss: 0.695 Eval Acc: 0.864
+Epoch: 038 Train Loss: 0.041 Train Acc: 0.985 Eval Loss: 0.686 Eval Acc: 0.865
+Epoch: 039 Train Loss: 0.039 Train Acc: 0.986 Eval Loss: 0.693 Eval Acc: 0.865
+Epoch: 040 Train Loss: 0.041 Train Acc: 0.986 Eval Loss: 0.699 Eval Acc: 0.864
+Epoch: 041 Train Loss: 0.038 Train Acc: 0.986 Eval Loss: 0.694 Eval Acc: 0.863
+Epoch: 042 Train Loss: 0.037 Train Acc: 0.987 Eval Loss: 0.698 Eval Acc: 0.864
+Epoch: 043 Train Loss: 0.038 Train Acc: 0.986 Eval Loss: 0.697 Eval Acc: 0.865
+Epoch: 044 Train Loss: 0.037 Train Acc: 0.987 Eval Loss: 0.693 Eval Acc: 0.865
+Epoch: 045 Train Loss: 0.037 Train Acc: 0.987 Eval Loss: 0.699 Eval Acc: 0.865
+Epoch: 046 Train Loss: 0.039 Train Acc: 0.986 Eval Loss: 0.698 Eval Acc: 0.865
+Epoch: 047 Train Loss: 0.036 Train Acc: 0.987 Eval Loss: 0.701 Eval Acc: 0.865
+Epoch: 048 Train Loss: 0.036 Train Acc: 0.987 Eval Loss: 0.708 Eval Acc: 0.864
+Epoch: 049 Train Loss: 0.037 Train Acc: 0.987 Eval Loss: 0.707 Eval Acc: 0.865
+Epoch: 050 Train Loss: 0.037 Train Acc: 0.987 Eval Loss: 0.707 Eval Acc: 0.865
+Test Accuracy: 0.865
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88      1000
+           1       0.94      0.93      0.93      1000
+           2       0.85      0.82      0.84      1000
+           3       0.72      0.74      0.73      1000
+           4       0.85      0.88      0.86      1000
+           5       0.79      0.76      0.78      1000
+           6       0.89      0.91      0.90      1000
+           7       0.91      0.89      0.90      1000
+           8       0.92      0.93      0.92      1000
+           9       0.91      0.90      0.91      1000
+
+    accuracy                           0.86     10000
+   macro avg       0.87      0.86      0.86     10000
+weighted avg       0.87      0.86      0.86     10000
+
+Global Sparsity:
+0.66
+Pruning and Finetuning 4/8
+Pruning...
+Test Accuracy: 0.736
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.64      0.85      0.73      1000
+           1       0.90      0.79      0.84      1000
+           2       0.64      0.80      0.71      1000
+           3       0.69      0.51      0.59      1000
+           4       0.66      0.84      0.74      1000
+           5       0.74      0.55      0.63      1000
+           6       0.64      0.89      0.74      1000
+           7       0.81      0.83      0.82      1000
+           8       0.97      0.64      0.77      1000
+           9       0.93      0.66      0.77      1000
+
+    accuracy                           0.74     10000
+   macro avg       0.76      0.74      0.73     10000
+weighted avg       0.76      0.74      0.73     10000
+
+Global Sparsity:
+0.76
+Fine-tuning...
+Epoch: 000 Eval Loss: 1.481 Eval Acc: 0.736
+Epoch: 001 Train Loss: 0.182 Train Acc: 0.941 Eval Loss: 0.729 Eval Acc: 0.845
+Epoch: 002 Train Loss: 0.140 Train Acc: 0.951 Eval Loss: 0.697 Eval Acc: 0.849
+Epoch: 003 Train Loss: 0.119 Train Acc: 0.958 Eval Loss: 0.678 Eval Acc: 0.851
+Epoch: 004 Train Loss: 0.117 Train Acc: 0.959 Eval Loss: 0.667 Eval Acc: 0.851
+Epoch: 005 Train Loss: 0.110 Train Acc: 0.960 Eval Loss: 0.655 Eval Acc: 0.855
+Epoch: 006 Train Loss: 0.099 Train Acc: 0.964 Eval Loss: 0.655 Eval Acc: 0.854
+Epoch: 007 Train Loss: 0.095 Train Acc: 0.965 Eval Loss: 0.656 Eval Acc: 0.855
+Epoch: 008 Train Loss: 0.095 Train Acc: 0.965 Eval Loss: 0.651 Eval Acc: 0.854
+Epoch: 009 Train Loss: 0.094 Train Acc: 0.966 Eval Loss: 0.651 Eval Acc: 0.856
+Epoch: 010 Train Loss: 0.089 Train Acc: 0.968 Eval Loss: 0.655 Eval Acc: 0.858
+Epoch: 011 Train Loss: 0.087 Train Acc: 0.968 Eval Loss: 0.644 Eval Acc: 0.858
+Epoch: 012 Train Loss: 0.086 Train Acc: 0.968 Eval Loss: 0.649 Eval Acc: 0.857
+Epoch: 013 Train Loss: 0.086 Train Acc: 0.969 Eval Loss: 0.649 Eval Acc: 0.857
+Epoch: 014 Train Loss: 0.087 Train Acc: 0.969 Eval Loss: 0.648 Eval Acc: 0.858
+Epoch: 015 Train Loss: 0.081 Train Acc: 0.971 Eval Loss: 0.646 Eval Acc: 0.857
+Epoch: 016 Train Loss: 0.081 Train Acc: 0.970 Eval Loss: 0.646 Eval Acc: 0.860
+Epoch: 017 Train Loss: 0.078 Train Acc: 0.972 Eval Loss: 0.647 Eval Acc: 0.857
+Epoch: 018 Train Loss: 0.077 Train Acc: 0.972 Eval Loss: 0.653 Eval Acc: 0.857
+Epoch: 019 Train Loss: 0.076 Train Acc: 0.973 Eval Loss: 0.654 Eval Acc: 0.858
+Epoch: 020 Train Loss: 0.075 Train Acc: 0.973 Eval Loss: 0.650 Eval Acc: 0.860
+Epoch: 021 Train Loss: 0.075 Train Acc: 0.974 Eval Loss: 0.651 Eval Acc: 0.859
+Epoch: 022 Train Loss: 0.075 Train Acc: 0.973 Eval Loss: 0.652 Eval Acc: 0.861
+Epoch: 023 Train Loss: 0.071 Train Acc: 0.975 Eval Loss: 0.652 Eval Acc: 0.860
+Epoch: 024 Train Loss: 0.073 Train Acc: 0.974 Eval Loss: 0.651 Eval Acc: 0.860
+Epoch: 025 Train Loss: 0.073 Train Acc: 0.973 Eval Loss: 0.652 Eval Acc: 0.859
+Epoch: 026 Train Loss: 0.071 Train Acc: 0.975 Eval Loss: 0.654 Eval Acc: 0.859
+Epoch: 027 Train Loss: 0.070 Train Acc: 0.975 Eval Loss: 0.658 Eval Acc: 0.860
+Epoch: 028 Train Loss: 0.069 Train Acc: 0.976 Eval Loss: 0.655 Eval Acc: 0.860
+Epoch: 029 Train Loss: 0.068 Train Acc: 0.976 Eval Loss: 0.656 Eval Acc: 0.860
+Epoch: 030 Train Loss: 0.069 Train Acc: 0.976 Eval Loss: 0.654 Eval Acc: 0.858
+Epoch: 031 Train Loss: 0.068 Train Acc: 0.976 Eval Loss: 0.661 Eval Acc: 0.859
+Epoch: 032 Train Loss: 0.066 Train Acc: 0.975 Eval Loss: 0.663 Eval Acc: 0.860
+Epoch: 033 Train Loss: 0.068 Train Acc: 0.975 Eval Loss: 0.657 Eval Acc: 0.862
+Epoch: 034 Train Loss: 0.065 Train Acc: 0.977 Eval Loss: 0.664 Eval Acc: 0.860
+Epoch: 035 Train Loss: 0.065 Train Acc: 0.977 Eval Loss: 0.664 Eval Acc: 0.860
+Epoch: 036 Train Loss: 0.063 Train Acc: 0.978 Eval Loss: 0.656 Eval Acc: 0.860
+Epoch: 037 Train Loss: 0.062 Train Acc: 0.977 Eval Loss: 0.664 Eval Acc: 0.861
+Epoch: 038 Train Loss: 0.064 Train Acc: 0.977 Eval Loss: 0.661 Eval Acc: 0.861
+Epoch: 039 Train Loss: 0.063 Train Acc: 0.977 Eval Loss: 0.662 Eval Acc: 0.861
+Epoch: 040 Train Loss: 0.063 Train Acc: 0.977 Eval Loss: 0.667 Eval Acc: 0.861
+Epoch: 041 Train Loss: 0.062 Train Acc: 0.978 Eval Loss: 0.669 Eval Acc: 0.861
+Epoch: 042 Train Loss: 0.061 Train Acc: 0.978 Eval Loss: 0.668 Eval Acc: 0.861
+Epoch: 043 Train Loss: 0.063 Train Acc: 0.977 Eval Loss: 0.665 Eval Acc: 0.861
+Epoch: 044 Train Loss: 0.063 Train Acc: 0.978 Eval Loss: 0.664 Eval Acc: 0.861
+Epoch: 045 Train Loss: 0.058 Train Acc: 0.979 Eval Loss: 0.666 Eval Acc: 0.861
+Epoch: 046 Train Loss: 0.061 Train Acc: 0.978 Eval Loss: 0.677 Eval Acc: 0.860
+Epoch: 047 Train Loss: 0.061 Train Acc: 0.979 Eval Loss: 0.671 Eval Acc: 0.862
+Epoch: 048 Train Loss: 0.060 Train Acc: 0.978 Eval Loss: 0.676 Eval Acc: 0.860
+Epoch: 049 Train Loss: 0.056 Train Acc: 0.980 Eval Loss: 0.678 Eval Acc: 0.863
+Epoch: 050 Train Loss: 0.059 Train Acc: 0.979 Eval Loss: 0.674 Eval Acc: 0.861
+Test Accuracy: 0.861
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.88      1000
+           1       0.94      0.92      0.93      1000
+           2       0.85      0.81      0.83      1000
+           3       0.71      0.75      0.73      1000
+           4       0.85      0.86      0.86      1000
+           5       0.80      0.75      0.77      1000
+           6       0.87      0.92      0.89      1000
+           7       0.90      0.89      0.89      1000
+           8       0.92      0.93      0.92      1000
+           9       0.91      0.90      0.90      1000
+
+    accuracy                           0.86     10000
+   macro avg       0.86      0.86      0.86     10000
+weighted avg       0.86      0.86      0.86     10000
+
+Global Sparsity:
+0.76
+Pruning and Finetuning 5/8
+Pruning...
+Test Accuracy: 0.652
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.77      0.58      0.66      1000
+           1       0.96      0.45      0.61      1000
+           2       0.59      0.73      0.65      1000
+           3       0.57      0.48      0.52      1000
+           4       0.53      0.83      0.65      1000
+           5       0.72      0.45      0.55      1000
+           6       0.69      0.82      0.75      1000
+           7       0.95      0.56      0.70      1000
+           8       0.52      0.90      0.66      1000
+           9       0.71      0.71      0.71      1000
+
+    accuracy                           0.65     10000
+   macro avg       0.70      0.65      0.65     10000
+weighted avg       0.70      0.65      0.65     10000
+
+Global Sparsity:
+0.83
+Fine-tuning...
+Epoch: 000 Eval Loss: 1.898 Eval Acc: 0.652
+Epoch: 001 Train Loss: 0.321 Train Acc: 0.897 Eval Loss: 0.669 Eval Acc: 0.834
+Epoch: 002 Train Loss: 0.217 Train Acc: 0.924 Eval Loss: 0.622 Eval Acc: 0.842
+Epoch: 003 Train Loss: 0.188 Train Acc: 0.932 Eval Loss: 0.607 Eval Acc: 0.846
+Epoch: 004 Train Loss: 0.178 Train Acc: 0.936 Eval Loss: 0.597 Eval Acc: 0.848
+Epoch: 005 Train Loss: 0.165 Train Acc: 0.940 Eval Loss: 0.587 Eval Acc: 0.849
+Epoch: 006 Train Loss: 0.156 Train Acc: 0.944 Eval Loss: 0.585 Eval Acc: 0.849
+Epoch: 007 Train Loss: 0.153 Train Acc: 0.944 Eval Loss: 0.580 Eval Acc: 0.850
+Epoch: 008 Train Loss: 0.149 Train Acc: 0.947 Eval Loss: 0.583 Eval Acc: 0.851
+Epoch: 009 Train Loss: 0.139 Train Acc: 0.949 Eval Loss: 0.586 Eval Acc: 0.852
+Epoch: 010 Train Loss: 0.139 Train Acc: 0.949 Eval Loss: 0.583 Eval Acc: 0.854
+Epoch: 011 Train Loss: 0.135 Train Acc: 0.952 Eval Loss: 0.583 Eval Acc: 0.852
+Epoch: 012 Train Loss: 0.133 Train Acc: 0.952 Eval Loss: 0.587 Eval Acc: 0.853
+Epoch: 013 Train Loss: 0.129 Train Acc: 0.953 Eval Loss: 0.584 Eval Acc: 0.855
+Epoch: 014 Train Loss: 0.129 Train Acc: 0.953 Eval Loss: 0.580 Eval Acc: 0.854
+Epoch: 015 Train Loss: 0.122 Train Acc: 0.957 Eval Loss: 0.589 Eval Acc: 0.852
+Epoch: 016 Train Loss: 0.124 Train Acc: 0.956 Eval Loss: 0.588 Eval Acc: 0.853
+Epoch: 017 Train Loss: 0.123 Train Acc: 0.955 Eval Loss: 0.588 Eval Acc: 0.854
+Epoch: 018 Train Loss: 0.119 Train Acc: 0.957 Eval Loss: 0.586 Eval Acc: 0.853
+Epoch: 019 Train Loss: 0.116 Train Acc: 0.958 Eval Loss: 0.589 Eval Acc: 0.855
+Epoch: 020 Train Loss: 0.117 Train Acc: 0.958 Eval Loss: 0.593 Eval Acc: 0.856
+Epoch: 021 Train Loss: 0.115 Train Acc: 0.958 Eval Loss: 0.590 Eval Acc: 0.857
+Epoch: 022 Train Loss: 0.116 Train Acc: 0.958 Eval Loss: 0.591 Eval Acc: 0.855
+Epoch: 023 Train Loss: 0.114 Train Acc: 0.958 Eval Loss: 0.588 Eval Acc: 0.855
+Epoch: 024 Train Loss: 0.108 Train Acc: 0.961 Eval Loss: 0.594 Eval Acc: 0.857
+Epoch: 025 Train Loss: 0.109 Train Acc: 0.961 Eval Loss: 0.590 Eval Acc: 0.855
+Epoch: 026 Train Loss: 0.108 Train Acc: 0.961 Eval Loss: 0.597 Eval Acc: 0.855
+Epoch: 027 Train Loss: 0.106 Train Acc: 0.961 Eval Loss: 0.596 Eval Acc: 0.855
+Epoch: 028 Train Loss: 0.105 Train Acc: 0.961 Eval Loss: 0.600 Eval Acc: 0.856
+Epoch: 029 Train Loss: 0.103 Train Acc: 0.963 Eval Loss: 0.598 Eval Acc: 0.856
+Epoch: 030 Train Loss: 0.105 Train Acc: 0.962 Eval Loss: 0.601 Eval Acc: 0.857
+Epoch: 031 Train Loss: 0.102 Train Acc: 0.963 Eval Loss: 0.604 Eval Acc: 0.856
+Epoch: 032 Train Loss: 0.104 Train Acc: 0.963 Eval Loss: 0.603 Eval Acc: 0.857
+Epoch: 033 Train Loss: 0.096 Train Acc: 0.966 Eval Loss: 0.603 Eval Acc: 0.856
+Epoch: 034 Train Loss: 0.098 Train Acc: 0.964 Eval Loss: 0.607 Eval Acc: 0.856
+Epoch: 035 Train Loss: 0.100 Train Acc: 0.964 Eval Loss: 0.608 Eval Acc: 0.855
+Epoch: 036 Train Loss: 0.095 Train Acc: 0.965 Eval Loss: 0.610 Eval Acc: 0.859
+Epoch: 037 Train Loss: 0.093 Train Acc: 0.967 Eval Loss: 0.612 Eval Acc: 0.858
+Epoch: 038 Train Loss: 0.094 Train Acc: 0.966 Eval Loss: 0.612 Eval Acc: 0.858
+Epoch: 039 Train Loss: 0.096 Train Acc: 0.965 Eval Loss: 0.615 Eval Acc: 0.857
+Epoch: 040 Train Loss: 0.093 Train Acc: 0.967 Eval Loss: 0.614 Eval Acc: 0.859
+Epoch: 041 Train Loss: 0.091 Train Acc: 0.967 Eval Loss: 0.616 Eval Acc: 0.858
+Epoch: 042 Train Loss: 0.090 Train Acc: 0.968 Eval Loss: 0.621 Eval Acc: 0.858
+Epoch: 043 Train Loss: 0.088 Train Acc: 0.968 Eval Loss: 0.620 Eval Acc: 0.858
+Epoch: 044 Train Loss: 0.091 Train Acc: 0.967 Eval Loss: 0.627 Eval Acc: 0.856
+Epoch: 045 Train Loss: 0.092 Train Acc: 0.967 Eval Loss: 0.623 Eval Acc: 0.857
+Epoch: 046 Train Loss: 0.088 Train Acc: 0.968 Eval Loss: 0.619 Eval Acc: 0.859
+Epoch: 047 Train Loss: 0.088 Train Acc: 0.968 Eval Loss: 0.621 Eval Acc: 0.857
+Epoch: 048 Train Loss: 0.087 Train Acc: 0.969 Eval Loss: 0.617 Eval Acc: 0.856
+Epoch: 049 Train Loss: 0.086 Train Acc: 0.969 Eval Loss: 0.624 Eval Acc: 0.855
+Epoch: 050 Train Loss: 0.091 Train Acc: 0.966 Eval Loss: 0.620 Eval Acc: 0.856
+Test Accuracy: 0.856
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.87      0.87      1000
+           1       0.92      0.93      0.92      1000
+           2       0.83      0.82      0.82      1000
+           3       0.72      0.74      0.73      1000
+           4       0.84      0.86      0.85      1000
+           5       0.78      0.76      0.77      1000
+           6       0.90      0.90      0.90      1000
+           7       0.89      0.88      0.89      1000
+           8       0.92      0.92      0.92      1000
+           9       0.90      0.89      0.89      1000
+
+    accuracy                           0.86     10000
+   macro avg       0.86      0.86      0.86     10000
+weighted avg       0.86      0.86      0.86     10000
+
+Global Sparsity:
+0.83
+Pruning and Finetuning 6/8
+Pruning...
+Test Accuracy: 0.446
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.46      0.73      0.57      1000
+           1       0.83      0.32      0.46      1000
+           2       0.30      0.75      0.43      1000
+           3       0.50      0.30      0.37      1000
+           4       0.62      0.34      0.43      1000
+           5       0.58      0.21      0.31      1000
+           6       0.32      0.80      0.46      1000
+           7       0.60      0.66      0.63      1000
+           8       0.94      0.15      0.26      1000
+           9       0.90      0.21      0.34      1000
+
+    accuracy                           0.45     10000
+   macro avg       0.60      0.45      0.43     10000
+weighted avg       0.60      0.45      0.43     10000
+
+Global Sparsity:
+0.88
+Fine-tuning...
+Epoch: 000 Eval Loss: 3.474 Eval Acc: 0.446
+Epoch: 001 Train Loss: 0.563 Train Acc: 0.823 Eval Loss: 0.687 Eval Acc: 0.806
+Epoch: 002 Train Loss: 0.364 Train Acc: 0.872 Eval Loss: 0.618 Eval Acc: 0.825
+Epoch: 003 Train Loss: 0.313 Train Acc: 0.888 Eval Loss: 0.601 Eval Acc: 0.830
+Epoch: 004 Train Loss: 0.284 Train Acc: 0.898 Eval Loss: 0.584 Eval Acc: 0.834
+Epoch: 005 Train Loss: 0.270 Train Acc: 0.903 Eval Loss: 0.576 Eval Acc: 0.836
+Epoch: 006 Train Loss: 0.252 Train Acc: 0.909 Eval Loss: 0.574 Eval Acc: 0.839
+Epoch: 007 Train Loss: 0.244 Train Acc: 0.912 Eval Loss: 0.577 Eval Acc: 0.842
+Epoch: 008 Train Loss: 0.237 Train Acc: 0.915 Eval Loss: 0.574 Eval Acc: 0.840
+Epoch: 009 Train Loss: 0.230 Train Acc: 0.916 Eval Loss: 0.568 Eval Acc: 0.843
+Epoch: 010 Train Loss: 0.221 Train Acc: 0.920 Eval Loss: 0.576 Eval Acc: 0.842
+Epoch: 011 Train Loss: 0.209 Train Acc: 0.924 Eval Loss: 0.572 Eval Acc: 0.844
+Epoch: 012 Train Loss: 0.205 Train Acc: 0.926 Eval Loss: 0.578 Eval Acc: 0.845
+Epoch: 013 Train Loss: 0.205 Train Acc: 0.925 Eval Loss: 0.569 Eval Acc: 0.845
+Epoch: 014 Train Loss: 0.200 Train Acc: 0.928 Eval Loss: 0.574 Eval Acc: 0.846
+Epoch: 015 Train Loss: 0.201 Train Acc: 0.928 Eval Loss: 0.572 Eval Acc: 0.845
+Epoch: 016 Train Loss: 0.194 Train Acc: 0.929 Eval Loss: 0.580 Eval Acc: 0.846
+Epoch: 017 Train Loss: 0.188 Train Acc: 0.933 Eval Loss: 0.574 Eval Acc: 0.846
+Epoch: 018 Train Loss: 0.186 Train Acc: 0.933 Eval Loss: 0.583 Eval Acc: 0.843
+Epoch: 019 Train Loss: 0.182 Train Acc: 0.934 Eval Loss: 0.575 Eval Acc: 0.847
+Epoch: 020 Train Loss: 0.177 Train Acc: 0.936 Eval Loss: 0.581 Eval Acc: 0.846
+Epoch: 021 Train Loss: 0.176 Train Acc: 0.936 Eval Loss: 0.583 Eval Acc: 0.845
+Epoch: 022 Train Loss: 0.174 Train Acc: 0.937 Eval Loss: 0.585 Eval Acc: 0.846
+Epoch: 023 Train Loss: 0.169 Train Acc: 0.939 Eval Loss: 0.584 Eval Acc: 0.848
+Epoch: 024 Train Loss: 0.168 Train Acc: 0.939 Eval Loss: 0.595 Eval Acc: 0.845
+Epoch: 025 Train Loss: 0.170 Train Acc: 0.939 Eval Loss: 0.590 Eval Acc: 0.846
+Epoch: 026 Train Loss: 0.166 Train Acc: 0.939 Eval Loss: 0.592 Eval Acc: 0.848
+Epoch: 027 Train Loss: 0.168 Train Acc: 0.939 Eval Loss: 0.589 Eval Acc: 0.847
+Epoch: 028 Train Loss: 0.163 Train Acc: 0.940 Eval Loss: 0.586 Eval Acc: 0.850
+Epoch: 029 Train Loss: 0.159 Train Acc: 0.942 Eval Loss: 0.593 Eval Acc: 0.847
+Epoch: 030 Train Loss: 0.156 Train Acc: 0.944 Eval Loss: 0.594 Eval Acc: 0.846
+Epoch: 031 Train Loss: 0.161 Train Acc: 0.942 Eval Loss: 0.595 Eval Acc: 0.846
+Epoch: 032 Train Loss: 0.155 Train Acc: 0.944 Eval Loss: 0.599 Eval Acc: 0.847
+Epoch: 033 Train Loss: 0.154 Train Acc: 0.944 Eval Loss: 0.597 Eval Acc: 0.847
+Epoch: 034 Train Loss: 0.154 Train Acc: 0.945 Eval Loss: 0.594 Eval Acc: 0.847
+Epoch: 035 Train Loss: 0.152 Train Acc: 0.945 Eval Loss: 0.600 Eval Acc: 0.848
+Epoch: 036 Train Loss: 0.147 Train Acc: 0.947 Eval Loss: 0.604 Eval Acc: 0.847
+Epoch: 037 Train Loss: 0.146 Train Acc: 0.947 Eval Loss: 0.602 Eval Acc: 0.850
+Epoch: 038 Train Loss: 0.143 Train Acc: 0.948 Eval Loss: 0.604 Eval Acc: 0.850
+Epoch: 039 Train Loss: 0.145 Train Acc: 0.948 Eval Loss: 0.606 Eval Acc: 0.849
+Epoch: 040 Train Loss: 0.141 Train Acc: 0.949 Eval Loss: 0.607 Eval Acc: 0.848
+Epoch: 041 Train Loss: 0.145 Train Acc: 0.948 Eval Loss: 0.610 Eval Acc: 0.849
+Epoch: 042 Train Loss: 0.142 Train Acc: 0.948 Eval Loss: 0.614 Eval Acc: 0.848
+Epoch: 043 Train Loss: 0.141 Train Acc: 0.949 Eval Loss: 0.612 Eval Acc: 0.851
+Epoch: 044 Train Loss: 0.136 Train Acc: 0.950 Eval Loss: 0.615 Eval Acc: 0.850
+Epoch: 045 Train Loss: 0.136 Train Acc: 0.951 Eval Loss: 0.625 Eval Acc: 0.848
+Epoch: 046 Train Loss: 0.137 Train Acc: 0.951 Eval Loss: 0.619 Eval Acc: 0.850
+Epoch: 047 Train Loss: 0.139 Train Acc: 0.949 Eval Loss: 0.615 Eval Acc: 0.851
+Epoch: 048 Train Loss: 0.131 Train Acc: 0.953 Eval Loss: 0.625 Eval Acc: 0.849
+Epoch: 049 Train Loss: 0.133 Train Acc: 0.952 Eval Loss: 0.626 Eval Acc: 0.851
+Epoch: 050 Train Loss: 0.137 Train Acc: 0.950 Eval Loss: 0.620 Eval Acc: 0.849
+Test Accuracy: 0.849
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.85      0.86      0.85      1000
+           1       0.93      0.90      0.92      1000
+           2       0.81      0.83      0.82      1000
+           3       0.71      0.71      0.71      1000
+           4       0.84      0.86      0.85      1000
+           5       0.76      0.77      0.76      1000
+           6       0.88      0.89      0.89      1000
+           7       0.91      0.85      0.88      1000
+           8       0.91      0.91      0.91      1000
+           9       0.89      0.90      0.89      1000
+
+    accuracy                           0.85     10000
+   macro avg       0.85      0.85      0.85     10000
+weighted avg       0.85      0.85      0.85     10000
+
+Global Sparsity:
+0.88
+Pruning and Finetuning 7/8
+Pruning...
+Test Accuracy: 0.349
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.64      0.11      0.18      1000
+           1       0.77      0.17      0.27      1000
+           2       0.27      0.53      0.36      1000
+           3       0.32      0.11      0.16      1000
+           4       0.21      0.84      0.34      1000
+           5       0.59      0.15      0.24      1000
+           6       0.47      0.50      0.49      1000
+           7       0.66      0.12      0.20      1000
+           8       0.85      0.32      0.46      1000
+           9       0.45      0.65      0.53      1000
+
+    accuracy                           0.35     10000
+   macro avg       0.52      0.35      0.32     10000
+weighted avg       0.52      0.35      0.32     10000
+
+Global Sparsity:
+0.92
+Fine-tuning...
+Epoch: 000 Eval Loss: 3.899 Eval Acc: 0.349
+Epoch: 001 Train Loss: 0.661 Train Acc: 0.788 Eval Loss: 0.689 Eval Acc: 0.792
+Epoch: 002 Train Loss: 0.446 Train Acc: 0.842 Eval Loss: 0.620 Eval Acc: 0.810
+Epoch: 003 Train Loss: 0.396 Train Acc: 0.857 Eval Loss: 0.596 Eval Acc: 0.817
+Epoch: 004 Train Loss: 0.367 Train Acc: 0.869 Eval Loss: 0.584 Eval Acc: 0.822
+Epoch: 005 Train Loss: 0.345 Train Acc: 0.874 Eval Loss: 0.578 Eval Acc: 0.826
+Epoch: 006 Train Loss: 0.331 Train Acc: 0.882 Eval Loss: 0.573 Eval Acc: 0.827
+Epoch: 007 Train Loss: 0.317 Train Acc: 0.887 Eval Loss: 0.572 Eval Acc: 0.827
+Epoch: 008 Train Loss: 0.311 Train Acc: 0.887 Eval Loss: 0.560 Eval Acc: 0.833
+Epoch: 009 Train Loss: 0.301 Train Acc: 0.892 Eval Loss: 0.564 Eval Acc: 0.830
+Epoch: 010 Train Loss: 0.293 Train Acc: 0.895 Eval Loss: 0.560 Eval Acc: 0.834
+Epoch: 011 Train Loss: 0.290 Train Acc: 0.896 Eval Loss: 0.557 Eval Acc: 0.834
+Epoch: 012 Train Loss: 0.277 Train Acc: 0.900 Eval Loss: 0.552 Eval Acc: 0.836
+Epoch: 013 Train Loss: 0.276 Train Acc: 0.901 Eval Loss: 0.552 Eval Acc: 0.838
+Epoch: 014 Train Loss: 0.268 Train Acc: 0.904 Eval Loss: 0.558 Eval Acc: 0.837
+Epoch: 015 Train Loss: 0.265 Train Acc: 0.904 Eval Loss: 0.554 Eval Acc: 0.838
+Epoch: 016 Train Loss: 0.258 Train Acc: 0.906 Eval Loss: 0.552 Eval Acc: 0.839
+Epoch: 017 Train Loss: 0.257 Train Acc: 0.906 Eval Loss: 0.551 Eval Acc: 0.840
+Epoch: 018 Train Loss: 0.257 Train Acc: 0.907 Eval Loss: 0.555 Eval Acc: 0.837
+Epoch: 019 Train Loss: 0.250 Train Acc: 0.910 Eval Loss: 0.558 Eval Acc: 0.840
+Epoch: 020 Train Loss: 0.248 Train Acc: 0.912 Eval Loss: 0.559 Eval Acc: 0.841
+Epoch: 021 Train Loss: 0.243 Train Acc: 0.913 Eval Loss: 0.553 Eval Acc: 0.841
+Epoch: 022 Train Loss: 0.240 Train Acc: 0.913 Eval Loss: 0.560 Eval Acc: 0.842
+Epoch: 023 Train Loss: 0.233 Train Acc: 0.915 Eval Loss: 0.557 Eval Acc: 0.841
+Epoch: 024 Train Loss: 0.233 Train Acc: 0.915 Eval Loss: 0.564 Eval Acc: 0.843
+Epoch: 025 Train Loss: 0.231 Train Acc: 0.916 Eval Loss: 0.567 Eval Acc: 0.841
+Epoch: 026 Train Loss: 0.230 Train Acc: 0.917 Eval Loss: 0.559 Eval Acc: 0.843
+Epoch: 027 Train Loss: 0.230 Train Acc: 0.917 Eval Loss: 0.564 Eval Acc: 0.842
+Epoch: 028 Train Loss: 0.223 Train Acc: 0.918 Eval Loss: 0.567 Eval Acc: 0.843
+Epoch: 029 Train Loss: 0.224 Train Acc: 0.919 Eval Loss: 0.568 Eval Acc: 0.842
+Epoch: 030 Train Loss: 0.227 Train Acc: 0.918 Eval Loss: 0.567 Eval Acc: 0.843
+Epoch: 031 Train Loss: 0.214 Train Acc: 0.922 Eval Loss: 0.574 Eval Acc: 0.843
+Epoch: 032 Train Loss: 0.215 Train Acc: 0.921 Eval Loss: 0.570 Eval Acc: 0.842
+Epoch: 033 Train Loss: 0.211 Train Acc: 0.923 Eval Loss: 0.573 Eval Acc: 0.843
+Epoch: 034 Train Loss: 0.216 Train Acc: 0.922 Eval Loss: 0.571 Eval Acc: 0.842
+Epoch: 035 Train Loss: 0.207 Train Acc: 0.925 Eval Loss: 0.574 Eval Acc: 0.844
+Epoch: 036 Train Loss: 0.210 Train Acc: 0.924 Eval Loss: 0.580 Eval Acc: 0.843
+Epoch: 037 Train Loss: 0.205 Train Acc: 0.926 Eval Loss: 0.571 Eval Acc: 0.843
+Epoch: 038 Train Loss: 0.206 Train Acc: 0.925 Eval Loss: 0.577 Eval Acc: 0.844
+Epoch: 039 Train Loss: 0.202 Train Acc: 0.927 Eval Loss: 0.575 Eval Acc: 0.843
+Epoch: 040 Train Loss: 0.202 Train Acc: 0.927 Eval Loss: 0.581 Eval Acc: 0.843
+Epoch: 041 Train Loss: 0.204 Train Acc: 0.927 Eval Loss: 0.574 Eval Acc: 0.842
+Epoch: 042 Train Loss: 0.196 Train Acc: 0.929 Eval Loss: 0.583 Eval Acc: 0.845
+Epoch: 043 Train Loss: 0.201 Train Acc: 0.928 Eval Loss: 0.582 Eval Acc: 0.842
+Epoch: 044 Train Loss: 0.197 Train Acc: 0.929 Eval Loss: 0.584 Eval Acc: 0.843
+Epoch: 045 Train Loss: 0.194 Train Acc: 0.929 Eval Loss: 0.578 Eval Acc: 0.844
+Epoch: 046 Train Loss: 0.195 Train Acc: 0.929 Eval Loss: 0.583 Eval Acc: 0.843
+Epoch: 047 Train Loss: 0.194 Train Acc: 0.931 Eval Loss: 0.582 Eval Acc: 0.845
+Epoch: 048 Train Loss: 0.189 Train Acc: 0.932 Eval Loss: 0.578 Eval Acc: 0.845
+Epoch: 049 Train Loss: 0.190 Train Acc: 0.931 Eval Loss: 0.586 Eval Acc: 0.843
+Epoch: 050 Train Loss: 0.191 Train Acc: 0.931 Eval Loss: 0.580 Eval Acc: 0.845
+Test Accuracy: 0.845
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.88      0.86      1000
+           1       0.91      0.92      0.91      1000
+           2       0.80      0.81      0.81      1000
+           3       0.72      0.68      0.70      1000
+           4       0.85      0.84      0.85      1000
+           5       0.77      0.76      0.77      1000
+           6       0.88      0.89      0.88      1000
+           7       0.87      0.88      0.87      1000
+           8       0.91      0.90      0.91      1000
+           9       0.88      0.90      0.89      1000
+
+    accuracy                           0.84     10000
+   macro avg       0.84      0.85      0.84     10000
+weighted avg       0.84      0.84      0.84     10000
+
+Global Sparsity:
+0.92
+Pruning and Finetuning 8/8
+Pruning...
+Test Accuracy: 0.313
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.28      0.79      0.41      1000
+           1       0.54      0.16      0.25      1000
+           2       0.26      0.50      0.34      1000
+           3       0.27      0.10      0.15      1000
+           4       0.56      0.14      0.22      1000
+           5       0.35      0.21      0.27      1000
+           6       0.57      0.34      0.43      1000
+           7       0.27      0.75      0.39      1000
+           8       0.85      0.09      0.16      1000
+           9       0.21      0.04      0.07      1000
+
+    accuracy                           0.31     10000
+   macro avg       0.42      0.31      0.27     10000
+weighted avg       0.42      0.31      0.27     10000
+
+Global Sparsity:
+0.94
+Fine-tuning...
+Epoch: 000 Eval Loss: 3.829 Eval Acc: 0.313
+Epoch: 001 Train Loss: 0.903 Train Acc: 0.708 Eval Loss: 0.771 Eval Acc: 0.751
+Epoch: 002 Train Loss: 0.584 Train Acc: 0.794 Eval Loss: 0.682 Eval Acc: 0.778
+Epoch: 003 Train Loss: 0.515 Train Acc: 0.819 Eval Loss: 0.652 Eval Acc: 0.790
+Epoch: 004 Train Loss: 0.473 Train Acc: 0.831 Eval Loss: 0.632 Eval Acc: 0.795
+Epoch: 005 Train Loss: 0.450 Train Acc: 0.839 Eval Loss: 0.616 Eval Acc: 0.803
+Epoch: 006 Train Loss: 0.427 Train Acc: 0.848 Eval Loss: 0.609 Eval Acc: 0.808
+Epoch: 007 Train Loss: 0.415 Train Acc: 0.851 Eval Loss: 0.599 Eval Acc: 0.810
+Epoch: 008 Train Loss: 0.401 Train Acc: 0.856 Eval Loss: 0.592 Eval Acc: 0.811
+Epoch: 009 Train Loss: 0.387 Train Acc: 0.862 Eval Loss: 0.589 Eval Acc: 0.814
+Epoch: 010 Train Loss: 0.373 Train Acc: 0.867 Eval Loss: 0.589 Eval Acc: 0.814
+Epoch: 011 Train Loss: 0.368 Train Acc: 0.868 Eval Loss: 0.584 Eval Acc: 0.816
+Epoch: 012 Train Loss: 0.357 Train Acc: 0.870 Eval Loss: 0.585 Eval Acc: 0.817
+Epoch: 013 Train Loss: 0.353 Train Acc: 0.873 Eval Loss: 0.585 Eval Acc: 0.819
+Epoch: 014 Train Loss: 0.348 Train Acc: 0.875 Eval Loss: 0.583 Eval Acc: 0.820
+Epoch: 015 Train Loss: 0.342 Train Acc: 0.877 Eval Loss: 0.582 Eval Acc: 0.821
+Epoch: 016 Train Loss: 0.337 Train Acc: 0.878 Eval Loss: 0.583 Eval Acc: 0.822
+Epoch: 017 Train Loss: 0.329 Train Acc: 0.881 Eval Loss: 0.581 Eval Acc: 0.823
+Epoch: 018 Train Loss: 0.323 Train Acc: 0.882 Eval Loss: 0.583 Eval Acc: 0.821
+Epoch: 019 Train Loss: 0.322 Train Acc: 0.883 Eval Loss: 0.587 Eval Acc: 0.819
+Epoch: 020 Train Loss: 0.317 Train Acc: 0.886 Eval Loss: 0.584 Eval Acc: 0.824
+Epoch: 021 Train Loss: 0.316 Train Acc: 0.886 Eval Loss: 0.577 Eval Acc: 0.824
+Epoch: 022 Train Loss: 0.311 Train Acc: 0.887 Eval Loss: 0.581 Eval Acc: 0.823
+Epoch: 023 Train Loss: 0.310 Train Acc: 0.889 Eval Loss: 0.587 Eval Acc: 0.822
+Epoch: 024 Train Loss: 0.306 Train Acc: 0.890 Eval Loss: 0.585 Eval Acc: 0.823
+Epoch: 025 Train Loss: 0.304 Train Acc: 0.890 Eval Loss: 0.587 Eval Acc: 0.824
+Epoch: 026 Train Loss: 0.301 Train Acc: 0.891 Eval Loss: 0.588 Eval Acc: 0.823
+Epoch: 027 Train Loss: 0.298 Train Acc: 0.893 Eval Loss: 0.590 Eval Acc: 0.827
+Epoch: 028 Train Loss: 0.292 Train Acc: 0.894 Eval Loss: 0.588 Eval Acc: 0.826
+Epoch: 029 Train Loss: 0.287 Train Acc: 0.895 Eval Loss: 0.592 Eval Acc: 0.824
+Epoch: 030 Train Loss: 0.285 Train Acc: 0.898 Eval Loss: 0.597 Eval Acc: 0.824
+Epoch: 031 Train Loss: 0.281 Train Acc: 0.898 Eval Loss: 0.595 Eval Acc: 0.828
+Epoch: 032 Train Loss: 0.284 Train Acc: 0.898 Eval Loss: 0.597 Eval Acc: 0.825
+Epoch: 033 Train Loss: 0.284 Train Acc: 0.899 Eval Loss: 0.590 Eval Acc: 0.826
+Epoch: 034 Train Loss: 0.281 Train Acc: 0.899 Eval Loss: 0.592 Eval Acc: 0.828
+Epoch: 035 Train Loss: 0.272 Train Acc: 0.900 Eval Loss: 0.598 Eval Acc: 0.827
+Epoch: 036 Train Loss: 0.278 Train Acc: 0.900 Eval Loss: 0.593 Eval Acc: 0.828
+Epoch: 037 Train Loss: 0.273 Train Acc: 0.901 Eval Loss: 0.597 Eval Acc: 0.826
+Epoch: 038 Train Loss: 0.270 Train Acc: 0.902 Eval Loss: 0.600 Eval Acc: 0.827
+Epoch: 039 Train Loss: 0.268 Train Acc: 0.904 Eval Loss: 0.600 Eval Acc: 0.827
+Epoch: 040 Train Loss: 0.267 Train Acc: 0.903 Eval Loss: 0.602 Eval Acc: 0.826
+Epoch: 041 Train Loss: 0.271 Train Acc: 0.901 Eval Loss: 0.602 Eval Acc: 0.826
+Epoch: 042 Train Loss: 0.264 Train Acc: 0.903 Eval Loss: 0.599 Eval Acc: 0.827
+Epoch: 043 Train Loss: 0.266 Train Acc: 0.904 Eval Loss: 0.603 Eval Acc: 0.829
+Epoch: 044 Train Loss: 0.259 Train Acc: 0.906 Eval Loss: 0.602 Eval Acc: 0.828
+Epoch: 045 Train Loss: 0.260 Train Acc: 0.905 Eval Loss: 0.604 Eval Acc: 0.827
+Epoch: 046 Train Loss: 0.256 Train Acc: 0.907 Eval Loss: 0.605 Eval Acc: 0.828
+Epoch: 047 Train Loss: 0.258 Train Acc: 0.907 Eval Loss: 0.607 Eval Acc: 0.827
+Epoch: 048 Train Loss: 0.259 Train Acc: 0.905 Eval Loss: 0.597 Eval Acc: 0.829
+Epoch: 049 Train Loss: 0.256 Train Acc: 0.907 Eval Loss: 0.600 Eval Acc: 0.827
+Epoch: 050 Train Loss: 0.249 Train Acc: 0.911 Eval Loss: 0.603 Eval Acc: 0.828
+Test Accuracy: 0.828
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.84      0.84      1000
+           1       0.91      0.90      0.90      1000
+           2       0.79      0.80      0.79      1000
+           3       0.67      0.69      0.68      1000
+           4       0.82      0.82      0.82      1000
+           5       0.76      0.72      0.74      1000
+           6       0.85      0.89      0.87      1000
+           7       0.88      0.85      0.87      1000
+           8       0.89      0.90      0.89      1000
+           9       0.88      0.87      0.87      1000
+
+    accuracy                           0.83     10000
+   macro avg       0.83      0.83      0.83     10000
+weighted avg       0.83      0.83      0.83     10000
+
+Global Sparsity:
+0.94
+Test Accuracy: 0.828
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.84      0.84      1000
+           1       0.91      0.90      0.90      1000
+           2       0.79      0.80      0.79      1000
+           3       0.67      0.69      0.68      1000
+           4       0.82      0.82      0.82      1000
+           5       0.76      0.72      0.74      1000
+           6       0.85      0.89      0.87      1000
+           7       0.88      0.85      0.87      1000
+           8       0.89      0.90      0.89      1000
+           9       0.88      0.87      0.87      1000
+
+    accuracy                           0.83     10000
+   macro avg       0.83      0.83      0.83     10000
+weighted avg       0.83      0.83      0.83     10000
+
+Global Sparsity:
+0.94
