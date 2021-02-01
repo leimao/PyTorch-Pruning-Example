@@ -2,7 +2,7 @@
 
 ## Introduction
 
-PyTorch pruning example for ResNet.
+PyTorch pruning example for ResNet. ResNet18 pre-trained on CIFAR-10 dataset maintains the same prediction accuracy with 50x compression after pruning.
 
 ## Usages
 

@@ -268,23 +268,6 @@ def main():
 
     pruned_model = copy.deepcopy(model)
 
-    iterative_pruning_finetuning(
-        model=pruned_model,
-        train_loader=train_loader,
-        test_loader=test_loader,
-        device=cuda_device,
-        learning_rate=learning_rate,
-        learning_rate_decay=learning_rate_decay,
-        l1_regularization_strength=l1_regularization_strength,
-        l2_regularization_strength=l2_regularization_strength,
-        conv2d_prune_amount=0.3,
-        linear_prune_amount=0,
-        num_iterations=8,
-        num_epochs_per_iteration=50,
-        model_filename_prefix=model_filename_prefix,
-        model_dir=model_dir,
-        grouped_pruning=True)
-
     # iterative_pruning_finetuning(
     #     model=pruned_model,
     #     train_loader=train_loader,
@@ -294,12 +277,30 @@ def main():
     #     learning_rate_decay=learning_rate_decay,
     #     l1_regularization_strength=l1_regularization_strength,
     #     l2_regularization_strength=l2_regularization_strength,
-    #     conv2d_prune_amount=0.92,
+    #     conv2d_prune_amount=0.3,
     #     linear_prune_amount=0,
-    #     num_iterations=1,
-    #     num_epochs_per_iteration=500,
+    #     num_iterations=8,
+    #     num_epochs_per_iteration=50,
     #     model_filename_prefix=model_filename_prefix,
-    #     model_dir=model_dir)
+    #     model_dir=model_dir,
+    #     grouped_pruning=True)
+
+    iterative_pruning_finetuning(
+        model=pruned_model,
+        train_loader=train_loader,
+        test_loader=test_loader,
+        device=cuda_device,
+        learning_rate=learning_rate,
+        learning_rate_decay=learning_rate_decay,
+        l1_regularization_strength=l1_regularization_strength,
+        l2_regularization_strength=l2_regularization_strength,
+        conv2d_prune_amount=0.98,
+        linear_prune_amount=0,
+        num_iterations=1,
+        num_epochs_per_iteration=500,
+        model_filename_prefix=model_filename_prefix,
+        model_dir=model_dir,
+        grouped_pruning=True)
 
     # Apply mask to the parameters and remove the mask.
     remove_parameters(model=pruned_model)
