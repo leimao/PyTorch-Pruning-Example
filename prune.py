@@ -10,17 +10,14 @@ def compute_final_pruning_rate(pruning_rate, num_iterations):
         Note that this cannot be applied for global pruning rate if the pruning rate is heterogeneous among different layers.
 
     Args:
-        pruning_rate ([type]): [description]
-        num_iterations ([type]): [description]
+        pruning_rate (float): Pruning rate.
+        num_iterations (int): Number of iterations.
 
     Returns:
-        [type]: [description]
+        float: Final pruning rate.
     """
 
-    final_pruning_rate = 0
-
-    for _ in range(num_iterations):
-        final_pruning_rate += (1 - final_pruning_rate) * pruning_rate
+    final_pruning_rate = 1 - (1 - pruning_rate)**num_iterations
 
     return final_pruning_rate
 
@@ -52,22 +49,28 @@ def measure_module_sparsity(module, weight=True, bias=False, use_mask=False):
     return num_zeros, num_elements, sparsity
 
 
-def measure_global_sparsity(model, weight=True, bias=False, use_mask=False):
+def measure_global_sparsity(model,
+                            weight=True,
+                            bias=False,
+                            conv2d_use_mask=False,
+                            linear_use_mask=False):
 
     num_zeros = 0
     num_elements = 0
 
     for module_name, module in model.named_modules():
+
         if isinstance(module, torch.nn.Conv2d):
 
             module_num_zeros, module_num_elements, _ = measure_module_sparsity(
-                module, weight=weight, bias=bias, use_mask=use_mask)
+                module, weight=weight, bias=bias, use_mask=conv2d_use_mask)
             num_zeros += module_num_zeros
             num_elements += module_num_elements
 
         elif isinstance(module, torch.nn.Linear):
+
             module_num_zeros, module_num_elements, _ = measure_module_sparsity(
-                module, weight=weight, bias=bias, use_mask=use_mask)
+                module, weight=weight, bias=bias, use_mask=linear_use_mask)
             num_zeros += module_num_zeros
             num_elements += module_num_elements
 
@@ -89,7 +92,8 @@ def iterative_pruning_finetuning(model,
                                  num_iterations=10,
                                  num_epochs_per_iteration=10,
                                  model_filename_prefix="pruned_model",
-                                 model_dir="saved_models"):
+                                 model_dir="saved_models",
+                                 grouped_pruning=False):
 
     for i in range(num_iterations):
 
@@ -97,15 +101,28 @@ def iterative_pruning_finetuning(model,
 
         print("Pruning...")
 
-        for module_name, module in model.named_modules():
-            if isinstance(module, torch.nn.Conv2d):
-                prune.l1_unstructured(module,
-                                      name="weight",
-                                      amount=conv2d_prune_amount)
-            elif isinstance(module, torch.nn.Linear):
-                prune.l1_unstructured(module,
-                                      name="weight",
-                                      amount=linear_prune_amount)
+        if grouped_pruning == True:
+            # Global pruning
+            # I would rather call it grouped pruning.
+            parameters_to_prune = []
+            for module_name, module in model.named_modules():
+                if isinstance(module, torch.nn.Conv2d):
+                    parameters_to_prune.append((module, "weight"))
+            prune.global_unstructured(
+                parameters_to_prune,
+                pruning_method=prune.L1Unstructured,
+                amount=conv2d_prune_amount,
+            )
+        else:
+            for module_name, module in model.named_modules():
+                if isinstance(module, torch.nn.Conv2d):
+                    prune.l1_unstructured(module,
+                                          name="weight",
+                                          amount=conv2d_prune_amount)
+                elif isinstance(module, torch.nn.Linear):
+                    prune.l1_unstructured(module,
+                                          name="weight",
+                                          amount=linear_prune_amount)
 
         _, eval_accuracy = evaluate_model(model=model,
                                           test_loader=test_loader,
@@ -116,7 +133,11 @@ def iterative_pruning_finetuning(model,
             model=model, test_loader=test_loader, device=device)
 
         num_zeros, num_elements, sparsity = measure_global_sparsity(
-            model, weight=True, bias=False, use_mask=True)
+            model,
+            weight=True,
+            bias=False,
+            conv2d_use_mask=True,
+            linear_use_mask=False)
 
         print("Test Accuracy: {:.3f}".format(eval_accuracy))
         print("Classification Report:")
@@ -124,8 +145,7 @@ def iterative_pruning_finetuning(model,
         print("Global Sparsity:")
         print("{:.2f}".format(sparsity))
 
-        print(model.conv1._forward_pre_hooks)
-        print(model.conv1._backward_pre_hooks)
+        # print(model.conv1._forward_pre_hooks)
 
         print("Fine-tuning...")
 
@@ -147,7 +167,11 @@ def iterative_pruning_finetuning(model,
             model=model, test_loader=test_loader, device=device)
 
         num_zeros, num_elements, sparsity = measure_global_sparsity(
-            model, weight=True, bias=False, use_mask=True)
+            model,
+            weight=True,
+            bias=False,
+            conv2d_use_mask=True,
+            linear_use_mask=False)
 
         print("Test Accuracy: {:.3f}".format(eval_accuracy))
         print("Classification Report:")
@@ -155,10 +179,14 @@ def iterative_pruning_finetuning(model,
         print("Global Sparsity:")
         print("{:.2f}".format(sparsity))
 
-        model_filename = "{}_{}.pt".format(model_filename_prefix, i+1)
+        model_filename = "{}_{}.pt".format(model_filename_prefix, i + 1)
         model_filepath = os.path.join(model_dir, model_filename)
-        save_model(model=model, model_dir=model_dir, model_filename=model_filename)
-        model = load_model(model=model, model_filepath=model_filepath, device=device)
+        save_model(model=model,
+                   model_dir=model_dir,
+                   model_filename=model_filename)
+        model = load_model(model=model,
+                           model_filepath=model_filepath,
+                           device=device)
 
     return model
 
@@ -186,6 +214,7 @@ def remove_parameters(model):
                 pass
 
     return model
+
 
 def main():
 
@@ -239,22 +268,6 @@ def main():
 
     pruned_model = copy.deepcopy(model)
 
-    # iterative_pruning_finetuning(
-    #     model=pruned_model,
-    #     train_loader=train_loader,
-    #     test_loader=test_loader,
-    #     device=cuda_device,
-    #     learning_rate=learning_rate,
-    #     learning_rate_decay=learning_rate_decay,
-    #     l1_regularization_strength=l1_regularization_strength,
-    #     l2_regularization_strength=l2_regularization_strength,
-    #     conv2d_prune_amount=0.3,
-    #     linear_prune_amount=0,
-    #     num_iterations=8,
-    #     num_epochs_per_iteration=50,
-    #     model_filename_prefix=model_filename_prefix,
-    #     model_dir=model_dir)
-
     iterative_pruning_finetuning(
         model=pruned_model,
         train_loader=train_loader,
@@ -264,12 +277,29 @@ def main():
         learning_rate_decay=learning_rate_decay,
         l1_regularization_strength=l1_regularization_strength,
         l2_regularization_strength=l2_regularization_strength,
-        conv2d_prune_amount=0.92,
+        conv2d_prune_amount=0.3,
         linear_prune_amount=0,
-        num_iterations=1,
-        num_epochs_per_iteration=500,
+        num_iterations=8,
+        num_epochs_per_iteration=50,
         model_filename_prefix=model_filename_prefix,
-        model_dir=model_dir)
+        model_dir=model_dir,
+        grouped_pruning=True)
+
+    # iterative_pruning_finetuning(
+    #     model=pruned_model,
+    #     train_loader=train_loader,
+    #     test_loader=test_loader,
+    #     device=cuda_device,
+    #     learning_rate=learning_rate,
+    #     learning_rate_decay=learning_rate_decay,
+    #     l1_regularization_strength=l1_regularization_strength,
+    #     l2_regularization_strength=l2_regularization_strength,
+    #     conv2d_prune_amount=0.92,
+    #     linear_prune_amount=0,
+    #     num_iterations=1,
+    #     num_epochs_per_iteration=500,
+    #     model_filename_prefix=model_filename_prefix,
+    #     model_dir=model_dir)
 
     # Apply mask to the parameters and remove the mask.
     remove_parameters(model=pruned_model)
@@ -291,6 +321,7 @@ def main():
     print("{:.2f}".format(sparsity))
 
     save_model(model=model, model_dir=model_dir, model_filename=model_filename)
+
 
 if __name__ == "__main__":
 

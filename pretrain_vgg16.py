@@ -22,7 +22,8 @@ def main():
     set_random_seeds(random_seed=random_seed)
 
     # Create an untrained model.
-    model = create_model(num_classes=num_classes, model_func=torchvision.models.vgg16)
+    model = create_model(num_classes=num_classes,
+                         model_func=torchvision.models.vgg16)
 
     train_loader, test_loader, classes = prepare_dataloader(
         num_workers=8, train_batch_size=128, eval_batch_size=256)
