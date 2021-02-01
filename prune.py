@@ -297,7 +297,7 @@ def main():
         conv2d_prune_amount=0.98,
         linear_prune_amount=0,
         num_iterations=1,
-        num_epochs_per_iteration=500,
+        num_epochs_per_iteration=200,
         model_filename_prefix=model_filename_prefix,
         model_dir=model_dir,
         grouped_pruning=True)
