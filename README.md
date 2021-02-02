@@ -32,4 +32,5 @@ $ python prune.py
 
 ## References
 
+* [PyTorch Pruning](https://leimao.github.io/blog/PyTorch-Pruning/)
 * [PyTorch Pruning Tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)
