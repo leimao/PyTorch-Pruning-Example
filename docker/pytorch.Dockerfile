@@ -46,5 +46,5 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-RUN pip install torch==1.7.1 torchvision==0.8.2
+RUN pip install torch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1
 RUN pip install scikit-learn==0.24.1
