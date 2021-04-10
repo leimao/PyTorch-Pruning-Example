@@ -179,14 +179,20 @@ def train_model(model,
             _, preds = torch.max(outputs, 1)
             loss = criterion(outputs, labels)
 
-            # This implementation might be problematic for iterative pruning + finetuning for pruned models that have masks.
-            # Because here the weight is going to be the original weight.
-            # The derivatives to the masked original weights are no longer zero.
             l1_reg = torch.tensor(0.).to(device)
-            for name, param in model.named_parameters():
+            for module in model.modules():
+                mask = None
+                weight = None
+                for name, buffer in module.named_buffers():
+                    if name == "weight_mask":
+                        mask = buffer
+                for name, param in module.named_parameters():
+                    if name == "weight_orig":
+                        weight = param
                 # We usually only want to introduce sparsity to weights and prune weights.
-                if "weight" in name:
-                    l1_reg += torch.norm(param, 1)
+                # Do the same for bias if necessary.
+                if mask is not None and weight is not None:
+                    l1_reg += torch.norm(mask * weight, 1)
 
             loss += l1_regularization_strength * l1_reg
 
