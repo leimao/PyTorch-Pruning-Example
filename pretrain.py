@@ -2,6 +2,8 @@ import os
 import torch
 from utils import set_random_seeds, create_model, prepare_dataloader, train_model, save_model, load_model, evaluate_model, create_classification_report
 
+import argparse
+
 
 def main():
 
@@ -10,7 +12,7 @@ def main():
     l1_regularization_strength = 0
     l2_regularization_strength = 1e-4
     learning_rate = 1e-1
-    num_epochs = 200
+    num_epochs = 30
     cuda_device = torch.device("cuda:0")
     cpu_device = torch.device("cpu:0")
 
