@@ -6,18 +6,31 @@ import argparse
 
 
 def main():
+    parser = argparse.ArgumentParser(description='Trains resnet18 model to prepare pruning')
 
+    parser.add_argument('--model_dir', type=str, default='saved_models', help='Path to model saving after training')
+    parser.add_argument('--model_filename', type=str, default='resnet18_cifar10.pt', help='Name of saving model')
+    parser.add_argument('--epochs', type=int, default=30, help='Number of epochs')
+    parser.add_argument('--n_cpu', type=int, default=8, help='Number of cpu threads to use during batch generation')
+    parser.add_argument('--train_batch_size', type=int, default=128, help='Number of batch size during training')
+    parser.add_argument('--eval_batch_size', type=int, default=256, help='Number of batch size during evaluation')
+    parser.add_argument('--l1_regularization_strength', type=int, default=0, help='Number of l1 regularization strength')
+    parser.add_argument('--l2_regularization_strength', type=int, default=1e-4, help='Number of l2 regularization strength')
+
+    args = parser.parse_args()
+    print(f'Command line arguments: {args}')
+    
     random_seed = 0
     num_classes = 10
-    l1_regularization_strength = 0
-    l2_regularization_strength = 1e-4
+    l1_regularization_strength = args.l1_regularization_strength
+    l2_regularization_strength = args.l2_regularization_strength
     learning_rate = 1e-1
-    num_epochs = 30
+    num_epochs = args.epochs
     cuda_device = torch.device("cuda:0")
     cpu_device = torch.device("cpu:0")
 
-    model_dir = "saved_models"
-    model_filename = "resnet18_cifar10.pt"
+    model_dir = args.model_dir
+    model_filename = args.model_filename
     model_filepath = os.path.join(model_dir, model_filename)
 
     set_random_seeds(random_seed=random_seed)
@@ -26,7 +39,7 @@ def main():
     model = create_model(num_classes=num_classes)
 
     train_loader, test_loader, classes = prepare_dataloader(
-        num_workers=8, train_batch_size=128, eval_batch_size=256)
+        num_workers=args.n_cpu, train_batch_size=args.train_batch_size, eval_batch_size=args.eval_batch_size)
 
     # Train model.
     print("Training Model...")

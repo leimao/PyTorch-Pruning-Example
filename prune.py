@@ -3,6 +3,7 @@ import copy
 import torch
 import torch.nn.utils.prune as prune
 from utils import set_random_seeds, create_model, prepare_dataloader, train_model, save_model, load_model, evaluate_model, create_classification_report
+import argparse
 
 
 def compute_final_pruning_rate(pruning_rate, num_iterations):
@@ -217,21 +218,38 @@ def remove_parameters(model):
 
 
 def main():
+    parser = argparse.ArgumentParser(description='Trains resnet18 model to prepare pruning')
+
+    parser.add_argument('--model_dir', type=str, default='saved_models', help='Path to pretrained model for pruning')
+    parser.add_argument('--model_filename', type=str, default='resnet18_cifar10.pt', help='Name of pretrained model')
+    parser.add_argument('--model_filename_prefix', type=str, default='pruned_model', help='Name of prefix')
+    parser.add_argument('--pruned_model_filename', type=str, default='resnet18_pruned_cifar10.pt', help='Name of saving model after pruning pretrained model')
+    parser.add_argument('--epochs', type=int, default=10, help='Number of epochs during fine tuning')
+    parser.add_argument('--iters', type=int, default=5, help='Number of iterations (number of pruning)')
+    parser.add_argument('--n_cpu', type=int, default=8, help='Number of cpu threads to use during batch generation')
+    parser.add_argument('--train_batch_size', type=int, default=128, help='Number of batch size during training')
+    parser.add_argument('--eval_batch_size', type=int, default=256, help='Number of batch size during evaluation')
+    parser.add_argument('--l1_regularization_strength', type=int, default=0, help='Number of l1 regularization strength')
+    parser.add_argument('--l2_regularization_strength', type=int, default=1e-4, help='Number of l2 regularization strength')
+
+    args = parser.parse_args()
+    print(f'Command line arguments: {args}')
+
 
     num_classes = 10
     random_seed = 1
-    l1_regularization_strength = 0
-    l2_regularization_strength = 1e-4
+    l1_regularization_strength = args.l1_regularization_strength
+    l2_regularization_strength = args.l2_regularization_strength
     learning_rate = 1e-3
     learning_rate_decay = 1
 
     cuda_device = torch.device("cuda:0")
     cpu_device = torch.device("cpu:0")
 
-    model_dir = "saved_models"
-    model_filename = "resnet18_cifar10.pt"
-    model_filename_prefix = "pruned_model"
-    pruned_model_filename = "resnet18_pruned_cifar10.pt"
+    model_dir = args.model_dir
+    model_filename = args.model_filename
+    model_filename_prefix = args.model_filename_prefix
+    pruned_model_filename = args.pruned_model_filename
     model_filepath = os.path.join(model_dir, model_filename)
     pruned_model_filepath = os.path.join(model_dir, pruned_model_filename)
 
@@ -246,7 +264,7 @@ def main():
                        device=cuda_device)
 
     train_loader, test_loader, classes = prepare_dataloader(
-        num_workers=8, train_batch_size=128, eval_batch_size=256)
+        num_workers=args.n_cpu, train_batch_size=args.train_batch_sie, eval_batch_size=args.eval_batch_size)
 
     _, eval_accuracy = evaluate_model(model=model,
                                       test_loader=test_loader,
@@ -296,8 +314,8 @@ def main():
         l2_regularization_strength=l2_regularization_strength,
         conv2d_prune_amount=0.98,
         linear_prune_amount=0,
-        num_iterations=1,
-        num_epochs_per_iteration=200,
+        num_iterations=args.iters,
+        num_epochs_per_iteration=args.epochs,
         model_filename_prefix=model_filename_prefix,
         model_dir=model_dir,
         grouped_pruning=True)
