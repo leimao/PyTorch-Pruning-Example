@@ -30,6 +30,16 @@ $ python pretrain.py
 $ python prune.py
 ```
 
+## Result of test
+### Run Pre-Training
+<img src="./imgs/pretrain1.png" alt="drawing" width="600"/>
+
+
+### Run Pruning
+<img src="./imgs/prune1.png" alt="drawing" width="440"/>
+<img src="./imgs/prune2.png" alt="drawing" width="440"/>
+<img src="./imgs/prune3.png" alt="drawing" width="600"/>
+
 ## References
 
 * [PyTorch Pruning](https://leimao.github.io/blog/PyTorch-Pruning/)
