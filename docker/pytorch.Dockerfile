@@ -1,9 +1,10 @@
-FROM nvcr.io/nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
+FROM nvcr.io/nvidia/cuda:11.7.1-cudnn8-devel-ubuntu22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install package dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
         build-essential \
         autoconf \
         automake \
@@ -31,9 +32,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         valgrind \
         libsm6 \
         libxext6 \
-        libxrender-dev \
-        sudo
-RUN apt-get clean
+        libxrender-dev && \
+    apt-get clean
 
 RUN cd /usr/local/bin && \
     ln -s /usr/bin/python3 python && \
@@ -46,5 +46,5 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-RUN pip install torch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1
-RUN pip install scikit-learn==0.24.1
+RUN pip install torch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0
+RUN pip install scikit-learn==1.1.3
